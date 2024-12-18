@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+    <link rel="stylesheet" href="report.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="report-container">
+        <!-- Header Section -->
+        <header class="report-header">
+            <div class="school-logo">
+                <img src="school-logo.png" alt="School Logo">
+            </div>
+            <div class="school-info">
+                <h1>Oakland Valley School</h1>
+                <p>8343, Wild Rose Circle, Buffalo, NY 14224</p>
+            </div>
+            <div class="qr-code">
+                <img src="qr-code.png" alt="QR Code">
+            </div>
+        </header>
+
+        <!-- Title Section -->
+        <section class="report-title">
+            <h2>ANNUAL EXAMINATION</h2>
+        </section>
+
+        <!-- Student Information Section -->
+        <section class="student-info">
+            <p><strong>Student Name:</strong> Alex Arlene</p>
+            <p><strong>Class:</strong> 6A</p>
+            <p><strong>Roll No:</strong> 21</p>
+            <p><strong>Attendance:</strong> A: 6 P: 44 T: 50</p>
+        </section>
+
+        <!-- Marks Table Section -->
+        <section class="marks-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No</th>
+                        <th>Subject Name</th>
+                        <th>Total Marks</th>
+                        <th>Obtained Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>English</td>
+                        <td>50</td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mathematics</td>
+                        <td>50</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Science</td>
+                        <td>50</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Social Studies</td>
+                        <td>50</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Computer Studies</td>
+                        <td>50</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>P.E.</td>
+                        <td>50</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Total</th>
+                        <th>300</th>
+                        <th>198</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Graph Section -->
+        <section class="graph-section">
+            <h3>Result Analysis</h3>
+            <canvas id="resultGraph"></canvas>
+        </section>
+
+        <!-- Teacher's Comments Section -->
+        <section class="comments-section">
+            <h4>Class Teacher's Comments:</h4>
+            <p>Alex enjoys participating in class discussions and in group activities. He is able to read familiar words. He completes his assignments on time. He is able to grasp the concepts taught in class with repetition and guidance. He presents neat work and is making steady progress in writing simple sentences with appropriate punctuation marks.</p>
+        </section>
+
+        <!-- Signatures Section -->
+        <section class="signatures-section">
+            <div class="signature">
+                <p>Richard Omar</p>
+                <p>Principal</p>
+            </div>
+            <div class="signature">
+                <p>William Peter</p>
+                <p>HOD</p>
+            </div>
+            <div class="signature">
+                <p>Julia Fred</p>
+                <p>Homeroom Teacher</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Data for the graph
+        const labels = ["English", "Mathematics", "Science", "Social Studies", "Computer Studies", "P.E."];
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Obtained Marks',
+                    data: [39, 41, 29, 36, 22, 31],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Total Marks',
+                    data: [50, 50, 50, 50, 50, 50],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Class Average',
+                    data: [42, 45, 35, 40, 30, 38],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        // Configuration for the graph
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Performance Analysis by Subject'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Render the chart
+        const resultGraph = new Chart(
+            document.getElementById('resultGraph'),
+            config
+        );
+    </script>
+</body>
+</html>

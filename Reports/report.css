@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.report-container {
+    width: 50%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.report-title {
+    text-align: center;
+    margin: 0;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .school-logo img, header .qr-code img {
+    width: 100px;
+}
+
+.school-details {
+    text-align: center;
+}
+
+.school-details h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #001F54;
+}
+
+.title-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title-section h2 {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.student-details p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.marks-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.marks-table th, .marks-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.marks-table th {
+    background-color: #001F54;
+    color: white;
+}
+
+.graph-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.graph-section img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.comments-section {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #fff;
+    border-radius: 5px;
+    background: #001F54;
+}
+
+.comments-section h3 {
+    margin: 0 0 10px 0;
+}
+
+.signatures-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.signature {
+    text-align: center;
+}
